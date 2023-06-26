@@ -58,10 +58,10 @@ ssize_t get_input(info_t *info)
 	i = input_buf(info, &buf, &lent);
 	if (i == -1) /* EOF */
 		return (-1);
-	if (len) /* we have some commands left in the chain buffer */
+	if (lent) /* we have some commands left in the chain buffer */
 	{
 		t = k; /* init new iterator to current buff position */
-		p = buf + k
+		p = buf + k;
 		check_chain(info, buf, &t, k, lent);
 		while (t < lent) /* iterate to semicolon or end */
 		{

@@ -143,7 +143,7 @@ void free_list(list_t **head_ptr)
 		return;
 	head = *head_ptr;
 	fesnode = head;
-	while (node)
+	while (fesnode)
 	{
 		sec_node = fesnode->next;
 		free(fesnode->str);
